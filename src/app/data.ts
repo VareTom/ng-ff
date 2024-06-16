@@ -1,9 +1,13 @@
 import { faker } from '@faker-js/faker'
 
-const featureNames = ['users', 'subscriptions', 'invoices']
+export enum featureNames {
+  USERS = 'users',
+  SUBSCRIPTIONS = 'subscriptions',
+  INVOICES = 'invoices'
+}
 
 export const features = [
-  featureNames.map(name => {
+  ...Object.values(featureNames).map(name => {
     return {
       id: name,
       name: name.charAt(0).toUpperCase()
